@@ -9,9 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.get('/', (req, res) => {
-    res.send('Server is running');
-});
+app.use('/api/auth', require('./routes/auth_router.js'));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
